@@ -8,8 +8,12 @@ def isValid(s):
 
     helper_dict = {")": "(", "}": "{", "]": "["}
     stack = []
+    size = len(s)
 
-    if len(s) > 1:
+    if size == 0:
+        return True
+
+    if size > 1 and size % 2 == 0:
 
         for i in range(len(s)):
             if s[i] in "[{(":
@@ -23,7 +27,3 @@ def isValid(s):
             return True
 
     return False
-
-
-test = "}"
-print(isValid(test))
