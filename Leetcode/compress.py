@@ -8,27 +8,27 @@ def compress(chars):
     """
     i = 0
     count = 1
-    output = []
+    helper_str = ""
+
+    if len(chars) == 1:
+        return len(chars)
 
     while i < len(chars)-1:
         if chars[i] == chars[i+1]:
             count += 1
 
         elif chars[i] != chars[i+1]:
-            output.append(chars[i])
-            for j in str(count):
-                output.append(j)
+            helper_str += chars[i]
+            if count > 1:
+                helper_str += str(count)
 
             count = 1
-
         i += 1
 
+    helper_str += chars[i]
     if count > 1:
-        output.append(chars[i])
-        for i in str(count):
-            output.append(i)
+         helper_str += str(count)
 
-    return output
+    chars[:len(helper_str)] = helper_str
 
-input = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
-print(compress(input))
+    return (chars[:len(helper_str)])
