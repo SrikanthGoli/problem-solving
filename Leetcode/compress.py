@@ -6,25 +6,29 @@ def compress(chars):
     :type chars: List[str]
     :rtype: int
     """
-    helper_dict = {}
-    count = 0
-    for i in chars:
-        if i in helper_dict:
-            helper_dict[i] += 1
-        else:
-            helper_dict[i] = 1
+    i = 0
+    count = 1
+    output = []
 
-    for i in sorted(set(chars)):
-        if helper_dict[i] > 1:
-            chars[count] = i
-            count += 1
-            chars[count] = (str(helper_dict[i]))
-            count += 1
-        else:
-            chars[count] = i
+    while i < len(chars)-1:
+        if chars[i] == chars[i+1]:
             count += 1
 
-    return chars[:count]
+        elif chars[i] != chars[i+1]:
+            output.append(chars[i])
+            for j in str(count):
+                output.append(j)
 
-input = ["a","a","b","b","c","c","c"]
+            count = 1
+
+        i += 1
+
+    if count > 1:
+        output.append(chars[i])
+        for i in str(count):
+            output.append(i)
+
+    return output
+
+input = ["a","b","b","b","b","b","b","b","b","b","b","b","b"]
 print(compress(input))
