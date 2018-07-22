@@ -14,6 +14,8 @@ def validWordAbbreviation(word, abbr):
         if word[i] == abbr[j]:
             i += 1
             j += 1
+        elif abbr[j] == "0":
+            return False
         elif abbr[j].isnumeric():
             k = ""
             while j < abb_len and abbr[j].isnumeric():
@@ -22,10 +24,5 @@ def validWordAbbreviation(word, abbr):
             i += int(k)
         else:
             return False
-        
-    return abb_len <= word_len and i == word_len
 
-s = "hi"
-abbr = "2i"
-
-print(validWordAbbreviation(s, abbr))
+    return j == abb_len and i == word_len
