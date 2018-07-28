@@ -12,8 +12,8 @@ class Node(object):
 
 class binarySearchTree(object):
 
-    def __init__(self):
-        self.root = Node()
+    def __init__(self, data):
+        self.root = Node(data)
 
     def push(self, data):
 
@@ -38,11 +38,27 @@ class binarySearchTree(object):
                 curr_node.right.parent = curr_node
 
 
-    def display(self):
+    def print_in_order(self):
+
+        if self.left:
+            self.left.print_in_order()
+
+            print(self.data)
+
+        if self.right:
+            self.right.print_in_order()
 
 
 
-tree = binarySearchTree()
+
+tree = binarySearchTree(45)
 tree.push(50)
 tree.push(40)
 tree.push(60)
+tree.push(30)
+tree.push(70)
+tree.push(35)
+tree.push(80)
+tree.push(23)
+tree.push(64)
+print(tree.print_in_order())
