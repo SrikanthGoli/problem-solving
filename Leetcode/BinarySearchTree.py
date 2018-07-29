@@ -50,7 +50,6 @@ class binarySearchTree(object):
 
 
 
-
 tree = binarySearchTree(45)
 tree.push(50)
 tree.push(40)
@@ -60,5 +59,4 @@ tree.push(70)
 tree.push(35)
 tree.push(80)
 tree.push(23)
-tree.push(64)
 print(tree.print_in_order())
