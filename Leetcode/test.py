@@ -1,6 +1,5 @@
 
 # Binary Search Tree
-
 class Node(object):
 
     def __init__(self, data = None):
@@ -25,12 +24,12 @@ class binarySearchTree(object):
 
         else:
             while curr_node.left != None and curr_node.right != None:
-                if curr_node.data < new_node.data:
+                if curr_node.data > new_node.data:
                     curr_node = curr_node.left
                 else:
                     curr_node = curr_node.right
 
-            if curr_node.data < data:
+            if curr_node.data > data:
                 curr_node.left = new_node
                 curr_node.left.parent = curr_node
             else:
@@ -61,4 +60,4 @@ tree.push(70)
 tree.push(35)
 tree.push(80)
 tree.push(23)
-print(tree.inorderTraversal(tree))
+print(tree.inorderTraversal(tree.root))
