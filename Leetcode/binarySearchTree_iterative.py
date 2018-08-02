@@ -12,7 +12,7 @@ class binarySearchTree(object):
     def __init__(self, data = None):
         self.root = Node(data)
 
-    def add(self, data):
+    def push(self, data):
 
         prev_node = None
         new_node = Node(data)
@@ -61,9 +61,9 @@ class binarySearchTree(object):
 
         return res.data
 
-    def max(self):
+    def max(self, root):
 
-        curr = self.root
+        curr = root
 
         while curr:
             res = curr
@@ -125,7 +125,26 @@ class binarySearchTree(object):
 
         return parent.data
 
-    
+    def predecessor(self, data):
+
+        curr = self.root
+
+        while curr.data != data:
+            if data < curr.data:
+                curr = curr.left
+            else:
+                curr = curr.right
+
+        if curr.left:
+            return self.max(curr.left)
+
+        parent = curr.parent
+
+        while parent != None and parent.left.data == curr.data:
+            curr = parent
+            parent = curr.parent
+
+        return parent.data
 
 
 tree = binarySearchTree()
@@ -139,4 +158,4 @@ tree.add(450)
 tree.add(60)
 tree.add(22)
 tree.add(90)
-print(tree.successor(20))
+print(tree.predecessor(170))
