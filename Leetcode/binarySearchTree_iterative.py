@@ -36,6 +36,41 @@ class binarySearchTree(object):
             else:
                 prev_node.right = new_node
 
+    def lookup(self, data):
+
+        curr = self.root
+
+        while curr != None:
+
+            if data < curr.data:
+                curr = curr.left
+            elif data > curr.data:
+                curr = curr.right
+            else:
+                return True
+
+        return False
+
+    def min(self, root):
+
+        curr = root
+
+        while curr:
+            res = curr
+            curr = curr.left
+
+        return res.data
+
+    def max(self):
+
+        curr = self.root
+
+        while curr:
+            res = curr
+            curr = curr.right
+
+        return res.data
+
     def inorderTraversal(self, root):
 
         res = []
@@ -69,6 +104,29 @@ class binarySearchTree(object):
 
         return res
 
+    def successor(self, data):
+
+        curr = self.root
+
+        while curr.data != data:
+            if data < curr.data:
+                curr = curr.left
+            else:
+                curr = curr.right
+
+        if curr.right:
+            return self.min(curr.right)
+
+        parent = curr.parent
+
+        while parent != None and parent.right.data == curr.data:
+            curr = parent
+            parent = curr.parent
+
+        return parent.data
+
+    
+
 
 tree = binarySearchTree()
 tree.add(100)
@@ -80,6 +138,5 @@ tree.add(170)
 tree.add(450)
 tree.add(60)
 tree.add(22)
-print(tree.inorderTraversal(tree.root))
-print(tree.preorderTraversal(tree.root))
-print(tree.postorderTraversal(tree.root))
+tree.add(90)
+print(tree.successor(20))
