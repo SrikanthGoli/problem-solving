@@ -176,10 +176,18 @@ class binarySearchTree(object):
 
             if y.parent.data != data:
                 self.transplant(y.data, y.right.data)
+                rem.right = rem.right
+                y.right.parent = y
+
+            self.transplant(rem.data, y.data)
+            y.left = rem.left
+            y.left.parent = y
                 
 
 
 tree = binarySearchTree()
+tree.push(110)
+tree.push(112)
 tree.push(100)
 tree.push(20)
 tree.push(80)
@@ -190,4 +198,5 @@ tree.push(450)
 tree.push(60)
 tree.push(22)
 tree.push(90)
-print(tree.transplant(170, 450))
+print(tree.delete(100))
+print(tree.inorderTraversal(tree.root))
