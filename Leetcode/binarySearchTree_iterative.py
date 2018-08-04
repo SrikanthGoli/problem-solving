@@ -46,8 +46,8 @@ class binarySearchTree(object):
                 curr = curr.left
             elif data > curr.data:
                 curr = curr.right
-            else:
-                return True
+            elif data == curr.data:
+                return curr
 
         return False
 
@@ -146,16 +146,48 @@ class binarySearchTree(object):
 
         return parent.data
 
+    def transplant(self, parent, child):
+
+        p = self.lookup(parent)
+        c = self.lookup(child)
+
+        if p.parent == None:
+            self.root = c
+        elif p.parent.left.data == p.data:
+            p.parent.left = c
+        elif p.parent.right.data == p.data:
+            p.parent.right = c
+
+        if c.data:
+            c.parent == p.parent
+
+
+    def delete(self, data):
+
+        rem = self.lookup(data)
+
+        if rem.left:
+            self.transplant(data, rem.right.data)
+        elif rem.right:
+            self.transplant(data, rem.left.data)
+        else:
+            successor = self.min(rem.right)
+            y = self.lookup(successor)
+
+            if y.parent.data != data:
+                self.transplant(y.data, y.right.data)
+                
+
 
 tree = binarySearchTree()
-tree.add(100)
-tree.add(20)
-tree.add(80)
-tree.add(180)
-tree.add(70)
-tree.add(170)
-tree.add(450)
-tree.add(60)
-tree.add(22)
-tree.add(90)
-print(tree.predecessor(170))
+tree.push(100)
+tree.push(20)
+tree.push(80)
+tree.push(180)
+tree.push(70)
+tree.push(170)
+tree.push(450)
+tree.push(60)
+tree.push(22)
+tree.push(90)
+print(tree.transplant(170, 450))
