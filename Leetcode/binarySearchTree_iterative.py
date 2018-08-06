@@ -166,9 +166,9 @@ class binarySearchTree(object):
 
         rem = self.lookup(data)
 
-        if rem.left:
+        if rem.left == None:
             self.transplant(data, rem.right.data)
-        elif rem.right:
+        elif rem.right == None:
             self.transplant(data, rem.left.data)
         else:
             successor = self.min(rem.right)
@@ -182,21 +182,3 @@ class binarySearchTree(object):
             self.transplant(rem.data, y.data)
             y.left = rem.left
             y.left.parent = y
-                
-
-
-tree = binarySearchTree()
-tree.push(110)
-tree.push(112)
-tree.push(100)
-tree.push(20)
-tree.push(80)
-tree.push(180)
-tree.push(70)
-tree.push(170)
-tree.push(450)
-tree.push(60)
-tree.push(22)
-tree.push(90)
-print(tree.delete(100))
-print(tree.inorderTraversal(tree.root))
