@@ -1,5 +1,6 @@
 # 67. Add Binary
 
+
 def addBinary(a, b):
     """
     :type a: str

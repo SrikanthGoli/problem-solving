@@ -1,5 +1,6 @@
 # 28. Implement strStr()
 
+
 def strStr(haystack, needle):
     """
     :type haystack: str

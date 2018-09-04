@@ -1,5 +1,6 @@
-
 # 824. Goat Latin
+
+
 def toGoatLatin(S):
     """
     :type S: str

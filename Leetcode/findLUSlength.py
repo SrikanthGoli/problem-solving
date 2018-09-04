@@ -1,6 +1,7 @@
 
 # 521. Longest Uncommon Subsequence I
 
+
 def findLUSlength(a, b):
     """
     :type a: str

@@ -1,5 +1,5 @@
-
 # 443. String Compression
+
 
 def compress(chars):
     """
@@ -27,8 +27,8 @@ def compress(chars):
 
     helper_str += chars[i]
     if count > 1:
-         helper_str += str(count)
+        helper_str += str(count)
 
     chars[:len(helper_str)] = helper_str
 
-    return (chars[:len(helper_str)])
+    return chars[:len(helper_str)]

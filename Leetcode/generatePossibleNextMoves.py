@@ -1,5 +1,5 @@
-
 # 293. Flip Game
+
 
 def generatePossibleNextMoves(s):
     """
@@ -11,7 +11,6 @@ def generatePossibleNextMoves(s):
     res = set()
 
     while i < size:
-        helper_str = ""
         if s[i:i+2] == '++':
             helper_str = s[:i]+"--"+s[i+2:]
             res.add(helper_str)

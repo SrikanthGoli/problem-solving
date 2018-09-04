@@ -1,5 +1,6 @@
 # 788. Rotated Digits
 
+
 def rotatedDigits(N):
     """
     :type N: int

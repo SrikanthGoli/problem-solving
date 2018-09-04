@@ -1,5 +1,6 @@
 # 20. Valid Parentheses
 
+
 def isValid(s):
     """
     :type s: str

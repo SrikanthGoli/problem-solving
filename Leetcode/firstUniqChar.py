@@ -1,5 +1,6 @@
-
 # 387. First Unique Character in a String
+
+
 def firstUniqChar(s):
     """
     :type s: str

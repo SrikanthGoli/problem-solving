@@ -1,5 +1,5 @@
-
 # 383. Ransom Note
+
 
 def canConstruct(ransomNote, magazine):
     """
@@ -18,7 +18,7 @@ def canConstruct(ransomNote, magazine):
 
     for i in ransomNote:
         if i in aux_dict and aux_dict[i] > 0:
-            aux_dict[i]  -= 1
+            aux_dict[i] -= 1
 
         else:
             return False

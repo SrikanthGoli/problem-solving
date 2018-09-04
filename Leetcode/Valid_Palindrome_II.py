@@ -1,5 +1,5 @@
-
 # 680. Valid Palindrome II
+
 
 def validPalindrome(s):
     """

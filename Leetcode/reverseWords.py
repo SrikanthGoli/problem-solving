@@ -1,5 +1,5 @@
+# 557. Reverse Words in a String III
 
-#557. Reverse Words in a String III
 
 def reverseWords(s):
     """
@@ -14,9 +14,3 @@ def reverseWords(s):
             output += " "+i[::-1]
 
     return output
-
-
-input = "Let's take LeetCode contest"
-output = ""
-
-print(reverseWords(input))

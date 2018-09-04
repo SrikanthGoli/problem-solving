@@ -1,6 +1,5 @@
-
-
 # 859. Buddy Strings
+
 
 def buddyStrings(A, B):
     """
@@ -26,8 +25,3 @@ def buddyStrings(A, B):
         return True
 
     return False
-
-
-A = "ab"
-B = "ab"
-print(buddyStrings(A,B))

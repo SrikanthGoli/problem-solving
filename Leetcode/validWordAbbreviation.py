@@ -1,5 +1,6 @@
 # 408. Valid Word Abbreviation
 
+
 def validWordAbbreviation(word, abbr):
     """
     :type word: str

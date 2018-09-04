@@ -1,5 +1,5 @@
-
 # 459. Repeated Substring Pattern
+
 
 def repeatedSubstringPattern(s):
     """
@@ -29,7 +29,3 @@ def repeatedSubstringPattern(s):
     print(str_len)
 
     return helper_str * (str_len//len(helper_str)) == s
-
-a = "bb"
-print(repeatedSubstringPattern(a))
-

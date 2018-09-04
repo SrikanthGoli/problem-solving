@@ -1,8 +1,7 @@
-
 # 520. Detect Capital
 
-def detectCapitalUse(word):
 
+def detectCapitalUse(word):
     """
     :type word: str
     :rtype: bool

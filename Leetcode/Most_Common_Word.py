@@ -1,6 +1,5 @@
-import re
-
 # 819. Most Common Word
+
 
 def mostCommonWord(paragraph, banned):
     """

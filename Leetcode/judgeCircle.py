@@ -1,5 +1,5 @@
-
 # 657. Judge Route Circle
+
 
 def judgeCircle(moves):
     """
@@ -7,7 +7,7 @@ def judgeCircle(moves):
     :rtype: bool
     """
 
-    helper_dict = {"R" : 1, "L": -1, "U": 1, "D": -1}
+    helper_dict = {"R": 1, "L": -1, "U": 1, "D": -1}
     circle = 0
 
     for i in range(len(moves)):

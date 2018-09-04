@@ -1,5 +1,5 @@
-
 # 804. Unique Morse Code Words
+
 
 def uniqueMorseRepresentations(words):
     """
