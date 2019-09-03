@@ -1,4 +1,4 @@
-def threeSum(self, nums):
+def threeSum(nums):
     """
     :type nums: List[int]
     :rtype: List[List[int]]
